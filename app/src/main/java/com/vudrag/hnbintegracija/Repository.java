@@ -43,20 +43,16 @@ public class Repository {
 
     public void getCurrencies() {
         currencyDatabase = CurrencyDatabase.getInstance(context);
-
-        new Thread(() -> {
             dbCurrencies = currencyDatabase.dao().getCurrencies();
-        }).start();
-        do {
-            if (dbCurrencies != null) {
+
+
+            if (dbCurrencies != null && dbCurrencies.size() > 0) {
                 currencies.setValue(dbCurrencies);
                 if (dbCurrencies.get(0).getDatumPrimjene().equals(getDate())) {
                     return;
                 }
-                getCurrenciesData();
-                return;
             }
-        } while (true);
+        getCurrenciesData();
     }
 
     private String getDate() {

@@ -18,6 +18,7 @@ public abstract class CurrencyDatabase extends RoomDatabase {
             instance = Room.databaseBuilder(context,
                     CurrencyDatabase.class, "currency_db")
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .build();
         }
         return instance;

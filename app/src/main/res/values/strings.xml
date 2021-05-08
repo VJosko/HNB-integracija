@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">HNB integracija</string>
-    
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="valuta">Valuta:</string>
     <string name="prodaja">Prodaja:</string>
